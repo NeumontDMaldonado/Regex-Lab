@@ -8,7 +8,7 @@ public class Regex
 	public static void printUrls(String text)
 	{
 		String path = null;
-		String regex = "\"http://([w]*[.]?[a-z]+[.]?[a-z]*[.][a-z]{3})([/]?[a-z]*[/]*[a-z]*[-]?[.]*[0-9]*[.]*[a-zA-Z]*)\"";
+		String regex = "http://([w]*[.]?[a-z]+[.]?[a-z]*[.][a-z]{3})([/]?[a-z]*[/]*[a-z]*[-]?[.]*[0-9]*[.]*[a-zA-Z]*)";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher match = pattern.matcher(text);
 		if(match.find())

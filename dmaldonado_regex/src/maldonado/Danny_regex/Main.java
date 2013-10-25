@@ -11,7 +11,7 @@ public class Main {
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException
+	public static void main(String[] args) //throws IOException
 	{
 		FileReader input = null;
 		try 
@@ -26,10 +26,18 @@ public class Main {
 		BufferedReader reader = new BufferedReader(input);
 		
 		String text = "";
-		while(reader.ready())
+		try 
 		{
-			text = reader.readLine();
-			Regex.printUrls(text);
+			while(reader.ready())
+			{
+				text = reader.readLine();
+				Regex.printUrls(text);
+			}
+		} 
+		catch (IOException e) 
+		{
+			System.err.println("IO exception");
+			e.printStackTrace();
 		}
 	}
 }
